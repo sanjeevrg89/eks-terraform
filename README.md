@@ -20,5 +20,10 @@ terraform apply
 
 #### It will take 10-15 minutes for cluster provisioning
 #### After the cluster is ready, you can deploy required components (Helm, Ingress Controller, cert-manager etc.)
-#### To access the cluster kubeconfig file is currently stored in ```~/.kube/config```
+#### To access the cluster kubeconfig file is currently stored in same location of your TF code
+```
+KUBECONFIG=./kubeconfig_{cluster_name} kubectl get nodes
+
+export KUBECONFIG="${PWD}/kubeconfig_{cluster_name}"
+```
 
